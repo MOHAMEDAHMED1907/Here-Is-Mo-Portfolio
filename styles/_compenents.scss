@@ -1,0 +1,34 @@
+@mixin any-flex($justify, $align: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin centerY {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin centerX {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin button-style {
+  background: none;
+  color: #8a2be2;
+  border-bottom: 2px solid #8a2be2;
+
+  padding: 20px;
+  border-radius: 15px;
+}
+
+@mixin mob-img {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  outline: 4px solid #333;
+}

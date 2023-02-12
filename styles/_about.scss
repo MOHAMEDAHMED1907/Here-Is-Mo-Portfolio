@@ -1,0 +1,370 @@
+@media (max-width: $smallScreen) {
+  .heading-section {
+    @include any-flex(center);
+    padding: 20px 0 !important;
+    margin-bottom: 100px;
+    width: 100%;
+    background-color: #252525;
+    position: fixed;
+    z-index: 110;
+    h1 {
+      &,
+      span {
+        font-size: 20px !important;
+      }
+
+      font-weight: 900;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .img-container-mob {
+    @include any-flex(center);
+    img {
+      @include mob-img;
+      margin-top: 10rem;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.heading-section {
+  @include any-flex(center);
+  padding: 80px 0;
+  width: 100%;
+  // position: fixed;
+  h1 {
+    &,
+    span {
+      font-size: 50px;
+    }
+    span {
+      color: #8a2be2;
+      position: relative;
+      z-index: 1;
+    }
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    &::after {
+      content: "Resume ";
+      position: absolute;
+      font-size: 100px;
+      @include center;
+      opacity: 0.1;
+      letter-spacing: 10px;
+      z-index: 0;
+    }
+  }
+}
+// at All Screens
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  .inner-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 40px;
+    padding-bottom: 8rem;
+  }
+  .title-section {
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    padding-bottom: 30px;
+    h2 {
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 900;
+    }
+  }
+  .personal {
+    h2 {
+      width: 100%;
+      font-size: 25px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    &__info {
+      margin-bottom: 10rem;
+      .row {
+        @include any-flex(center, flex-start);
+
+        .column {
+          margin-right: 8rem;
+          .record {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            font-size: 15px;
+
+            h4 {
+              font-size: 15px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      a {
+        @include button-style;
+      }
+    }
+    &__stat {
+      flex: 1;
+      align-self: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(200px, 300px));
+      // margin-top: -50px;
+      gap: 2rem;
+      justify-content: center;
+      div {
+        border: 2px solid #252525;
+        border-radius: 15px;
+        padding: 2rem;
+        h2 {
+          display: flex;
+          color: #8a2be2;
+          > span:first-child {
+            font-size: 50px;
+            margin-right: 4px;
+          }
+          > span:last-child {
+            font-size: 40px;
+          }
+        }
+        p {
+          width: 10px;
+          max-width: calc(100% - 4rem);
+          padding-left: 40px;
+          margin-top: -4rem;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 3.5rem;
+            height: 2px;
+            background-color: #777;
+            left: 0;
+            top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// general
+
+.myskills {
+  .skills-container {
+    @include any-flex(center);
+    flex-wrap: wrap;
+    gap: 12rem;
+    padding-bottom: 8rem;
+
+    .skill {
+      > span {
+        display: block;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      &-css {
+        i {
+          color: yellow !important ;
+        }
+        circle {
+          stroke: yellow;
+        }
+      }
+      &-sass {
+        i {
+          color: crimson !important ;
+        }
+        circle {
+          stroke: crimson;
+        }
+      }
+      &-angular {
+        i {
+          color: red !important ;
+        }
+        circle {
+          stroke: red;
+        }
+      }
+      &-cpp {
+        i,
+        span {
+          color: rgb(83, 123, 255) !important ;
+        }
+        circle {
+          stroke: rgb(83, 123, 255) !important ;
+        }
+      }
+      &-oop {
+        i,
+        span {
+          color: whitesmoke !important ;
+        }
+        circle {
+          stroke: whitesmoke;
+        }
+      }
+      &-bootstrap {
+        i {
+          color: purple !important ;
+        }
+        circle {
+          stroke: purple;
+        }
+      }
+      &-js {
+        i {
+          color: yellow !important ;
+        }
+        circle {
+          stroke: yellow;
+        }
+      }
+    }
+  }
+}
+
+.education {
+  // padding-r: ;
+  .cards {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    .card {
+      padding: 0 5rem;
+      border-left: 2px solid #333;
+      position: relative;
+      flex: 1;
+      min-width: 390px;
+      margin-bottom: 8rem;
+      > div {
+        width: 40px;
+        height: 40px;
+        // background-color: red;
+        background-color: #8a2be2;
+        border-radius: 50%;
+        position: absolute;
+        top: -8px;
+        left: -20px;
+        @include any-flex(center);
+      }
+      span {
+        display: inline-block;
+        padding: 0px 8px;
+        border-radius: 30px;
+        margin-bottom: 1rem;
+        background-color: #333;
+      }
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 24px;
+      }
+      p {
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// style circle progress
+.skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  .outer {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    @include any-flex(center);
+    // box-shadow: 6px 6px 10px -1px #8a2be2, -6px -6px 10px -1px #8a2be2;
+    .inner {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid #333;
+      @include any-flex(center);
+      // box-shadow: inset 4px 4px 6px -1px #8a2be2,
+      //   inset -6px -6px 6px -1px #8a2be2, -0.5px -0.5px 0px #333,
+      //   0.5px 0.5px 0px #8a2be2, 0px 12px 10px -10px#8a2be2;
+      i {
+        font-weight: 900;
+        font-size: 80px;
+        color: orangered;
+      }
+      span {
+        font-weight: 900;
+        font-size: 40px;
+        color: orangered;
+      }
+    }
+  }
+}
+circle {
+  fill: none;
+  stroke: orangered;
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: progress 1s linear forwards;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+///  circle sttyle
+@keyframes progress {
+  100% {
+    stroke-dashoffset: 165;
+  }
+}
+
+// responsive container
+
+@media (min-width: $largestScreen) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 1199px) {
+  .personal {
+    text-align: center;
+    &__info {
+      flex: 1;
+    }
+  }
+}
+@media (max-width: 1199px) and (min-width: $largeScreen) {
+  .container {
+    max-width: calc(100% - 195px);
+  }
+  .personal {
+    text-align: center;
+  }
+}
+
+@media (max-width: $mediumScreen) {
+  .container {
+    max-width: 960px;
+    // padding: 0 25px;
+  }
+}
+
+@media (max-width: $smallScreen) {
+  .container {
+    max-width: 550px;
+    // padding: 0 25px !important;
+  }
+}

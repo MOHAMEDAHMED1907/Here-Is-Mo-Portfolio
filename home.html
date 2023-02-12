@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEMO</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- spinner -->
+
+    <div class="loader">
+      <div class="black-wall"></div>
+    </div>
+    <!-- spinner ends  -->
+
+    <!-- header start -->
+    <h1 class="logo">محمد</h1>
+    <header class="header" id="navbar-collapse-toggle">
+      <!-- fixed nav -->
+      <ul class="icons-menu d-none-mobile">
+        <li class="icons-menu__icon_box active">
+          <i class="fa fa-home"></i>
+          <a href="/home.html">
+            <h2>Home</h2>
+          </a>
+        </li>
+        <li class="icons-menu__icon_box">
+          <i class="fa fa-user"></i>
+          <a href="/about.html">
+            <h2>About</h2>
+          </a>
+        </li>
+        <li class="icons-menu__icon_box">
+          <i class="fa fa-briefcase"></i>
+          <a href="/portfolio.html">
+            <h2>Portfolio</h2>
+          </a>
+        </li>
+        <li class="icons-menu__icon_box">
+          <i class="fa fa-envelope-open"></i>
+          <a href="/contact.html">
+            <h2>Contact</h2>
+          </a>
+        </li>
+      </ul>
+
+      <!-- mobile-menu -->
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav role="navigation " class="d-none">
+        <ul class="mob-menu">
+          <li class="active">
+            <a href="/home.html">
+              <i class="fa fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/about.html">
+              <i class="fa fa-user"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portfolio.html">
+              <i class="fa fa-folder-open"></i>
+              <span>Portfolio</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact.html">
+              <i class="fa fa-envelope-open"></i>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- mobile-menu ends -->
+      <!-- fixed nav ends -->
+    </header>
+    <section class="main-container container-home">
+      <div class="home-details-container">
+        <div class="img-container-mob d-none">
+          <img src="/imgs/2.jpg" alt="personal photo" />
+        </div>
+        <h6 class="d-none-mobile">Hi</h6>
+        <h1><span> I'M </span> Mohammed Ahmed</h1>
+        <p>
+          I spend my day-to-day developing projects<br />and Problem Solving.
+        </p>
+        <a href="/about.html">
+          <span> ABOUT ME </span>
+          <i class="fa fa-user"></i>
+        </a>
+      </div>
+      <div class="color-block d-none-mobile"></div>
+      <div class="img-container d-none-mobile">
+        <!-- <img src="/imgs/2.jpg" alt="" /> -->
+      </div>
+    </section>
+    <!-- header ends -->
+    <script src="/control.js"></script>
+  </body>
+</html>

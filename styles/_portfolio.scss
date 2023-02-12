@@ -1,0 +1,203 @@
+@media (min-width: $largeScreen) {
+  .project-slider {
+    margin-top: -4rem;
+  }
+}
+.hidden {
+  display: none;
+  opacity: 0;
+}
+@media (max-width: $mediumScreen) {
+  .project-slider {
+    width: 100% !important;
+
+    // overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .close-btn {
+      i {
+        top: -4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $smallScreen) {
+  .projects {
+    padding-top: 10rem !important;
+  }
+  .project-slider {
+    padding-top: 18rem !important;
+  }
+}
+
+// at All Screens
+.container-portfolio {
+  //   background-color: red;
+  position: relative;
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    @for $i from 1 through 8 {
+      // looping projetcs and filling them with backgrounds and more
+      .project-#{$i} {
+        background-image: url("/imgs/projects/project-#{$i}.jpeg");
+
+        &::before {
+          content: var(--p-#{$i});
+        }
+      }
+    }
+  }
+}
+// general
+.heading-section-portfolio {
+  h1 {
+    &::after {
+      content: "projects";
+    }
+  }
+}
+
+.project-holder {
+  width: 300px;
+  height: 200px;
+  background-image: url(/imgs/projects/projectholder.png);
+  background-size: cover;
+  .project-preview {
+    position: relative;
+    width: 277px;
+    height: 167px;
+    left: 12px;
+    top: 12px;
+    cursor: pointer;
+    background-size: cover;
+
+    &::before {
+      content: "";
+      position: absolute;
+      @include any-flex(center);
+      width: 100%;
+      height: 100%;
+      font-size: 35px;
+      text-transform: capitalize;
+      background: radial-gradient(
+        800px circle at var(--mouse-pos-x) var(--mouse-pos-y),
+        #8a2be2,
+        transparent 40%
+      );
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    &:hover {
+      background: black !important;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+* {
+  // overflow-x: hidden;
+}
+.project-slider {
+  width: 60rem;
+  border-radius: 15px;
+  background-color: #333;
+  z-index: 109;
+  padding: 5rem;
+  position: absolute;
+  top: 0;
+  @include centerX;
+  i {
+    font-weight: 900;
+  }
+  // margin: 8rem 0;
+
+  .close-slide-btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: red;
+    cursor: pointer;
+    i {
+      position: absolute;
+      top: -6rem;
+      font-size: 30px;
+      @include centerX;
+      @include any-flex(center);
+      background-color: black;
+      padding: 1rem;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      outline: 8px solid #333;
+    }
+  }
+  .slider-header {
+    width: 100%;
+    @include any-flex(center);
+    padding-bottom: 2rem;
+    &::before {
+      content: "";
+
+      text-transform: uppercase;
+      color: #8a2be2;
+      font-size: 40px;
+      font-weight: 900;
+    }
+  }
+  .slider-info {
+    & > div {
+      margin-bottom: 2rem;
+      i {
+        font-size: 25px;
+        margin-right: 2rem;
+      }
+      .info {
+        font-weight: 900;
+      }
+      a {
+        color: lighten(#8a2be2, 15%);
+        &:hover {
+          color: lighten(#8a2be2, 0%);
+        }
+      }
+    }
+  }
+  .slide-content-preview {
+    width: 100%;
+    height: 300px;
+    margin-top: -5rem;
+    border-radius: 15px;
+    background-size: cover;
+  }
+}
+
+@for $i from 1 through 8 {
+  // looping projetcs and filling them with backgrounds and more
+  .project-holder-#{$i} {
+    .slider-header::before {
+      content: var(--p-#{$i});
+    }
+
+    .slide-content-preview {
+      background-image: url("/imgs/projects/project-#{$i}.jpeg");
+    }
+  }
+}
+
+.blur {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(black, #8a2be2, black);
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+}

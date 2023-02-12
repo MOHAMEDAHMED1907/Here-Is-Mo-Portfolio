@@ -1,0 +1,146 @@
+:root {
+  --bg-black-900: #f2f2fc;
+  --bg-black-100: #fdf9ff;
+  --bg-black-50: #e8dfec;
+
+  --text-black-900: #302e4d;
+  --text-black-700: #504e78;
+
+  --shadow-color: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  --underLine: 2px solid var(--color-grey-light-2);
+
+  --p-1: "forkify";
+  --p-2: "pacMan game";
+  --p-3: "maps log";
+  --p-4: "bank account";
+  --p-5: "nice desgin";
+  --p-6: "dashboard";
+  --p-7: "game";
+  --p-8: "game";
+}
+
+$smallScreen: 575px;
+$mediumScreen: 991px;
+$largeScreen: 992px;
+$largestScreen: 1200px;
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  @media only screen and (max-width: $largeScreen) {
+    font-size: 50%;
+  }
+}
+body {
+  font-family: "cairo", "Open Sans", sans-serif;
+  font-weight: 500;
+  color: #fff;
+
+  background-color: #111;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  .logo {
+    position: absolute;
+    top: 1rem;
+    font-size: 25px;
+    left: 3rem;
+    font-family: "Rakkas", cursive;
+    width: 38px;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #8a2be2;
+  border: 1px solid lighten(#8a2be2, 5%);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: lighten(#8a2be2, 5%);
+}
+/* end scrollbar */
+ul {
+  list-style: none;
+}
+
+.line-between-section {
+  border: 0;
+  border-top: 1px solid #252525;
+  margin: auto;
+  max-width: 40%;
+  margin-bottom: 8rem;
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  top: 0;
+  left: 0;
+  @include any-flex(center);
+  z-index: 1000;
+
+  .black-wall {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    width: 100vw;
+    background-color: #333;
+    animation: slide-down 0.75s ease;
+  }
+  &:after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 15px solid #dddddddd;
+    border-top-color: darken(#8a2be2, 5%);
+    border-top-style: double;
+    border-radius: 50%;
+    z-index: 1000;
+
+    animation: loading 0.75s ease infinite;
+  }
+}
+.loader-hidden {
+  opacity: 0;
+  visibility: 0;
+}
+@keyframes slide-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
+  }
+}
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
