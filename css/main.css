@@ -1,5 +1,6 @@
 @charset "UTF-8";
 :root {
+  --base-color: #8a2be2;
   --bg-black-900: #f2f2fc;
   --bg-black-100: #fdf9ff;
   --bg-black-50: #e8dfec;
@@ -71,7 +72,7 @@ body .logo {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #8a2be2;
+  background-color: var(--base-color);
   border: 1px solid #9641e5;
   border-radius: 10px;
 }
@@ -146,6 +147,33 @@ ul {
     transform: rotate(1turn);
   }
 }
+.show-scroll-up {
+  bottom: 2rem !important;
+}
+
+.scroll-up {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: -20rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.75s;
+}
+.scroll-up i {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--base-color);
+  cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
+  display: none !important;
+}
+
 @media (min-width: 992px) {
   .header {
     position: fixed;
@@ -188,7 +216,7 @@ ul {
     pointer-events: none;
   }
   .header .icons-menu__icon_box.active, .header .icons-menu__icon_box:hover {
-    background-color: #8a2be2;
+    background-color: var(--base-color);
   }
   .header .icons-menu__icon_box.active, .header .icons-menu__icon_box.active i, .header .icons-menu__icon_box:hover, .header .icons-menu__icon_box:hover i {
     color: #fff;
@@ -214,7 +242,7 @@ ul {
     border-radius: 30px;
     text-transform: uppercase;
     padding: 0 25px 0 30px;
-    background-color: #8a2be2;
+    background-color: var(--base-color);
     height: 50px;
   }
   .header .icons-menu__icon_box a:hover h2 {
@@ -223,7 +251,7 @@ ul {
     margin: 0;
     text-align: center;
     border-radius: 0 30px 30px 0;
-    background-color: #8a2be2;
+    background-color: var(--base-color);
   }
   .home-details-container .img-container-mob {
     display: none !important;
@@ -300,11 +328,11 @@ ul {
     transition: 0.2s;
   }
   nav .mob-menu li.active a {
-    color: #8a2be2;
+    color: var(--base-color);
   }
   nav .mob-menu li:hover {
     border-radius: 15px;
-    background-color: #8a2be2;
+    background-color: var(--base-color);
   }
   nav .mob-menu li:hover a {
     color: white;
@@ -380,7 +408,7 @@ ul {
   position: fixed;
   height: 200%;
   width: 100%;
-  background-color: #8a2be2;
+  background-color: var(--base-color);
   transform: rotate(-15deg);
   right: -83%;
   top: -50%;
@@ -414,7 +442,9 @@ ul {
   line-height: 45px;
   font-weight: 700;
   margin: 18px 0 10px;
-  color: #8a2be2;
+}
+.main-container .home-details-container h1 .typing {
+  color: var(--base-color);
 }
 .main-container .home-details-container h1 span {
   font-size: 40px;
@@ -434,11 +464,12 @@ ul {
   margin: 10px 10px 40px;
   font-size: 20px;
   line-height: 32px;
+  text-transform: capitalize;
 }
 .main-container .home-details-container a {
   background: none;
-  color: #8a2be2;
-  border-bottom: 2px solid #8a2be2;
+  color: var(--base-color);
+  border-bottom: 2px solid var(--base-color);
   padding: 20px;
   border-radius: 15px;
 }
@@ -552,7 +583,7 @@ medium screen  ✅
   font-size: 50px;
 }
 .heading-section h1 span {
-  color: #8a2be2;
+  color: var(--base-color);
   position: relative;
   z-index: 1;
 }
@@ -619,8 +650,8 @@ medium screen  ✅
 }
 .container .personal__info a {
   background: none;
-  color: #8a2be2;
-  border-bottom: 2px solid #8a2be2;
+  color: var(--base-color);
+  border-bottom: 2px solid var(--base-color);
   padding: 20px;
   border-radius: 15px;
 }
@@ -639,7 +670,7 @@ medium screen  ✅
 }
 .container .personal__stat div h2 {
   display: flex;
-  color: #8a2be2;
+  color: var(--base-color);
 }
 .container .personal__stat div h2 > span:first-child {
   font-size: 50px;
@@ -697,9 +728,9 @@ medium screen  ✅
 .myskills .skills-container .skill-angular circle {
   stroke: red;
 }
-.myskills .skills-container .skill-cpp i,
-.myskills .skills-container .skill-cpp span {
+.myskills .skills-container .skill-cpp i {
   color: rgb(83, 123, 255) !important;
+  font-size: 45px !important;
 }
 .myskills .skills-container .skill-cpp circle {
   stroke: rgb(83, 123, 255) !important;
@@ -740,7 +771,7 @@ medium screen  ✅
 .education .cards .card > div {
   width: 40px;
   height: 40px;
-  background-color: #8a2be2;
+  background-color: var(--base-color);
   border-radius: 50%;
   position: absolute;
   top: -8px;
@@ -803,7 +834,9 @@ circle {
   stroke-width: 20px;
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
-  animation: progress 1s linear forwards;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 svg {
@@ -812,9 +845,44 @@ svg {
   left: 0;
 }
 
-@keyframes progress {
+@keyframes progress-HTML {
   100% {
-    stroke-dashoffset: 165;
+    stroke-dashoffset: 90;
+  }
+}
+@keyframes progress-CSS {
+  100% {
+    stroke-dashoffset: 110;
+  }
+}
+@keyframes progress-SASS {
+  100% {
+    stroke-dashoffset: 130;
+  }
+}
+@keyframes progress-ANGULAR {
+  100% {
+    stroke-dashoffset: 450;
+  }
+}
+@keyframes progress-CPP {
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+@keyframes progress-OOP {
+  100% {
+    stroke-dashoffset: 80;
+  }
+}
+@keyframes progress-BOOTSTRAP {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes progress-JAVASCRIPT {
+  100% {
+    stroke-dashoffset: 110;
   }
 }
 @media (min-width: 1200px) {
@@ -849,6 +917,11 @@ svg {
   }
 }
 @media (min-width: 992px) {
+  .slider-buttons {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   .project-slider {
     margin-top: -4rem;
   }
@@ -964,7 +1037,7 @@ svg {
   height: 100%;
   font-size: 35px;
   text-transform: capitalize;
-  background: radial-gradient(800px circle at var(--mouse-pos-x) var(--mouse-pos-y), #8a2be2, transparent 40%);
+  background: radial-gradient(800px circle at var(--mouse-pos-x) var(--mouse-pos-y), var(--base-color), transparent 40%);
   left: 0;
   top: 0;
   opacity: 0;
@@ -1023,7 +1096,7 @@ svg {
 .project-slider .slider-header::before {
   content: "";
   text-transform: uppercase;
-  color: #8a2be2;
+  color: var(--base-color);
   font-size: 40px;
   font-weight: 900;
 }
@@ -1049,6 +1122,26 @@ svg {
   margin-top: -5rem;
   border-radius: 15px;
   background-size: cover;
+}
+
+.slider-buttons {
+  width: 100vw;
+  position: absolute;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -12rem;
+}
+.slider-buttons i {
+  cursor: pointer;
+  font-size: 40px;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 50%;
+  position: relative;
+  bottom: -10rem;
+  border: 2px solid var(--base-color);
 }
 
 .project-holder-1 .slider-header::before {
@@ -1110,7 +1203,7 @@ svg {
 .blur {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(black, #8a2be2, black);
+  background: linear-gradient(black, var(--base-color), black);
   opacity: 0.8;
   position: fixed;
   top: 0;
@@ -1204,7 +1297,7 @@ svg {
 }
 .container-contact .co-me .contact-ways .links li a i {
   font-size: 40px;
-  color: #8a2be2;
+  color: var(--base-color);
   border-radius: 50%;
   background-color: #333;
   padding: 2rem;
@@ -1212,7 +1305,7 @@ svg {
 }
 .container-contact .co-me .contact-ways .links li a:hover i {
   color: #333;
-  background-color: #8a2be2;
+  background-color: var(--base-color);
 }
 .container-contact .co-me .send_message {
   text-align: center;
@@ -1236,7 +1329,7 @@ svg {
   text-transform: uppercase;
 }
 .container-contact .co-me .send_message div input:focus {
-  outline: 3px solid #8a2be2;
+  outline: 3px solid var(--base-color);
 }
 .container-contact .co-me .send_message textarea {
   margin-top: 2rem;
@@ -1254,13 +1347,13 @@ svg {
   text-transform: capitalize;
 }
 .container-contact .co-me .send_message textarea:focus {
-  outline: 3px solid #8a2be2;
+  outline: 3px solid var(--base-color);
 }
 .container-contact .co-me .send_message button {
   margin: 5rem 2rem;
   background: none;
-  color: #8a2be2;
-  border-bottom: 2px solid #8a2be2;
+  color: var(--base-color);
+  border-bottom: 2px solid var(--base-color);
   padding: 20px;
   border-radius: 15px;
   cursor: pointer;
@@ -1276,4 +1369,15 @@ svg {
 .container-contact .co-me .send_message button:hover i {
   margin-left: 5px;
   opacity: 1;
+}
+.container-contact .co-me .send_message #email_statue {
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: goldenrod;
+  font-weight: 900;
+}
+.container-contact .co-me .send_message .fail {
+  color: red !important;
 }

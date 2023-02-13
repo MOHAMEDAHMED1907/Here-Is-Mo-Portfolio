@@ -1,4 +1,8 @@
 @media (min-width: $largeScreen) {
+  .slider-buttons {
+    @include center;
+  }
+
   .project-slider {
     margin-top: -4rem;
   }
@@ -36,7 +40,7 @@
 .container-portfolio {
   //   background-color: red;
   position: relative;
-
+  // overflow-x: hidden;
   .projects {
     display: flex;
     justify-content: center;
@@ -87,7 +91,7 @@
       text-transform: capitalize;
       background: radial-gradient(
         800px circle at var(--mouse-pos-x) var(--mouse-pos-y),
-        #8a2be2,
+        var(--base-color),
         transparent 40%
       );
       left: 0;
@@ -148,7 +152,7 @@
       content: "";
 
       text-transform: uppercase;
-      color: #8a2be2;
+      color: var(--base-color);
       font-size: 40px;
       font-weight: 900;
     }
@@ -164,9 +168,9 @@
         font-weight: 900;
       }
       a {
-        color: lighten(#8a2be2, 15%);
+        color: lighten($baseColor, 15%);
         &:hover {
-          color: lighten(#8a2be2, 0%);
+          color: lighten($baseColor, 0%);
         }
       }
     }
@@ -177,6 +181,24 @@
     margin-top: -5rem;
     border-radius: 15px;
     background-size: cover;
+  }
+}
+// slider buttons
+.slider-buttons {
+  width: 100vw;
+  position: absolute;
+  z-index: 110;
+  @include any-flex(space-around);
+  margin-top: -12rem;
+  i {
+    cursor: pointer;
+    font-size: 40px;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 50%;
+    position: relative;
+    bottom: -10rem;
+    border: 2px solid var(--base-color);
   }
 }
 
@@ -196,7 +218,7 @@
 .blur {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(black, #8a2be2, black);
+  background: linear-gradient(black, var(--base-color), black);
   opacity: 0.8;
   position: fixed;
   top: 0;

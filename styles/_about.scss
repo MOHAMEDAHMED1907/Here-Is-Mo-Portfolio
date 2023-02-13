@@ -41,7 +41,7 @@
       font-size: 50px;
     }
     span {
-      color: #8a2be2;
+      color: var(--base-color);
       position: relative;
       z-index: 1;
     }
@@ -128,7 +128,7 @@
         padding: 2rem;
         h2 {
           display: flex;
-          color: #8a2be2;
+          color: var(--base-color);
           > span:first-child {
             font-size: 50px;
             margin-right: 4px;
@@ -199,9 +199,9 @@
         }
       }
       &-cpp {
-        i,
-        span {
+        i {
           color: rgb(83, 123, 255) !important ;
+          font-size: 45px !important;
         }
         circle {
           stroke: rgb(83, 123, 255) !important ;
@@ -253,7 +253,7 @@
         width: 40px;
         height: 40px;
         // background-color: red;
-        background-color: #8a2be2;
+        background-color: var(--base-color);
         border-radius: 50%;
         position: absolute;
         top: -8px;
@@ -288,16 +288,16 @@
     height: 160px;
     border-radius: 50%;
     @include any-flex(center);
-    // box-shadow: 6px 6px 10px -1px #8a2be2, -6px -6px 10px -1px #8a2be2;
+    // box-shadow: 6px 6px 10px -1px var(--base-color), -6px -6px 10px -1px var(--base-color);
     .inner {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       border: 1px solid #333;
       @include any-flex(center);
-      // box-shadow: inset 4px 4px 6px -1px #8a2be2,
-      //   inset -6px -6px 6px -1px #8a2be2, -0.5px -0.5px 0px #333,
-      //   0.5px 0.5px 0px #8a2be2, 0px 12px 10px -10px#8a2be2;
+      // box-shadow: inset 4px 4px 6px -1px var(--base-color),
+      //   inset -6px -6px 6px -1px var(--base-color), -0.5px -0.5px 0px #333,
+      //   0.5px 0.5px 0px var(--base-color), 0px 12px 10px -10pxvar(--base-color);
       i {
         font-weight: 900;
         font-size: 80px;
@@ -317,7 +317,10 @@ circle {
   stroke-width: 20px;
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
-  animation: progress 1s linear forwards;
+
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 svg {
   position: absolute;
@@ -325,9 +328,46 @@ svg {
   left: 0;
 }
 ///  circle sttyle
-@keyframes progress {
+
+@keyframes progress-HTML {
   100% {
-    stroke-dashoffset: 165;
+    /// stroke-dasharray - (stroke-dasharray * ?/100 )
+    stroke-dashoffset: 90;
+  }
+}
+@keyframes progress-CSS {
+  100% {
+    stroke-dashoffset: 110;
+  }
+}
+@keyframes progress-SASS {
+  100% {
+    stroke-dashoffset: 130;
+  }
+}
+@keyframes progress-ANGULAR {
+  100% {
+    stroke-dashoffset: 450;
+  }
+}
+@keyframes progress-CPP {
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+@keyframes progress-OOP {
+  100% {
+    stroke-dashoffset: 80;
+  }
+}
+@keyframes progress-BOOTSTRAP {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes progress-JAVASCRIPT {
+  100% {
+    stroke-dashoffset: 110;
   }
 }
 

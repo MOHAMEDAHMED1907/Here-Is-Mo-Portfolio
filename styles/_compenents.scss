@@ -19,8 +19,8 @@
 
 @mixin button-style {
   background: none;
-  color: #8a2be2;
-  border-bottom: 2px solid #8a2be2;
+  color: var(--base-color);
+  border-bottom: 2px solid var(--base-color);
 
   padding: 20px;
   border-radius: 15px;

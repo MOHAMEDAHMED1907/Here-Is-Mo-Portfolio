@@ -41,7 +41,7 @@
         }
         &.active,
         &:hover {
-          background-color: #8a2be2;
+          background-color: var(--base-color);
         }
 
         &.active,
@@ -70,7 +70,7 @@
             border-radius: 30px;
             text-transform: uppercase;
             padding: 0 25px 0 30px;
-            background-color: #8a2be2;
+            background-color: var(--base-color);
             height: 50px;
           }
           &:hover {
@@ -80,7 +80,7 @@
               margin: 0;
               text-align: center;
               border-radius: 0 30px 30px 0;
-              background-color: #8a2be2;
+              background-color: var(--base-color);
             }
           }
         }
@@ -170,12 +170,12 @@
         transition: 0.2s;
         &.active {
           a {
-            color: #8a2be2;
+            color: var(--base-color);
           }
         }
         &:hover {
           border-radius: 15px;
-          background-color: #8a2be2;
+          background-color: var(--base-color);
           a {
             color: white;
           }
@@ -271,7 +271,7 @@
     position: fixed;
     height: 200%;
     width: 100%;
-    background-color: #8a2be2;
+    background-color: var(--base-color);
     transform: rotate(-15deg);
     right: -83%;
     top: -50%;
@@ -299,7 +299,9 @@
       line-height: 45px;
       font-weight: 700;
       margin: 18px 0 10px;
-      color: #8a2be2;
+      .typing {
+        color: var(--base-color);
+      }
       span {
         font-size: 40px;
 
@@ -320,6 +322,7 @@
       margin: 10px 10px 40px;
       font-size: 20px;
       line-height: 32px;
+      text-transform: capitalize;
     }
 
     a {

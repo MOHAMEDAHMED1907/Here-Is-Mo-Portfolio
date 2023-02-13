@@ -1,4 +1,5 @@
 :root {
+  --base-color: #8a2be2;
   --bg-black-900: #f2f2fc;
   --bg-black-100: #fdf9ff;
   --bg-black-50: #e8dfec;
@@ -23,7 +24,7 @@ $smallScreen: 575px;
 $mediumScreen: 991px;
 $largeScreen: 992px;
 $largestScreen: 1200px;
-
+$baseColor: #8a2be2;
 * {
   margin: 0;
   padding: 0;
@@ -73,12 +74,12 @@ body {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #8a2be2;
-  border: 1px solid lighten(#8a2be2, 5%);
+  background-color: var(--base-color);
+  border: 1px solid lighten($baseColor, 5%);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: lighten(#8a2be2, 5%);
+  background-color: lighten($baseColor, 5%);
 }
 /* end scrollbar */
 ul {
@@ -116,7 +117,7 @@ ul {
     width: 80px;
     height: 80px;
     border: 15px solid #dddddddd;
-    border-top-color: darken(#8a2be2, 5%);
+    border-top-color: darken($baseColor, 5%);
     border-top-style: double;
     border-radius: 50%;
     z-index: 1000;
@@ -143,4 +144,29 @@ ul {
   to {
     transform: rotate(1turn);
   }
+}
+
+// scroll up
+.show-scroll-up {
+  bottom: 2rem !important;
+}
+.scroll-up {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: -20rem;
+  left: 2rem;
+  @include any-flex(center);
+  transition: bottom 0.75s;
+  i {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--base-color);
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  display: none !important;
 }

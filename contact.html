@@ -17,10 +17,11 @@
       href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap"
       rel="stylesheet"
     />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!-- css files -->
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body dir="">
     <!-- spinner -->
 
     <div class="loader">
@@ -135,17 +136,37 @@
         </div>
         <form class="send_message">
           <div>
-            <input type="text" placeholder="your name" />
-            <input type="text" placeholder="your email" />
-            <input type="text" placeholder="your subject" />
+            <input
+              required
+              id="senderName"
+              type="text"
+              placeholder="your name"
+            />
+            <input
+              required
+              id="senderEmail"
+              type="email"
+              placeholder="your email"
+            />
+            <input
+              required
+              id="subject"
+              type="text"
+              placeholder="your subject"
+            />
           </div>
-          <textarea id="mesg" placeholder="Write your message here"></textarea>
+          <textarea
+            id="sentMesg"
+            placeholder="Write your message here"
+          ></textarea>
           <button>
             <span>Send Your message</span>
             <i class="fa-solid fa-paper-plane"></i>
           </button>
+          <span id="email_statue" class=""> </span>
         </form>
       </div>
+      <span class="scroll-up"><i class="fa-brands fa-space-awesome"></i></span>
     </section>
     <script src="/control.js"></script>
   </body>
