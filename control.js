@@ -243,6 +243,6 @@ const options = {
   smartBackspace: false,
   loop: true,
 };
-if (document.query.selector('.typing') ) {
+if (document.querySelector('.typing') ) {
 let typed = new Typed(".typing", options);
     }
