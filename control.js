@@ -162,7 +162,7 @@ window.addEventListener("load", () => {
 
   // actual removing it from code
   //blackWall.addEventListener("animationend", () => {
-  setTimeOut(()=>{
+  setTimeout(()=>{
     loader.classList.add("loader-hidden");
     document.body.removeChild(document.body.firstChild);
     loader.remove();
