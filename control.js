@@ -161,11 +161,11 @@ window.addEventListener("load", () => {
   const blackWall = document.querySelector(".black-wall");
 
   // actual removing it from code
-  blackWall.addEventListener("animationend", () => {
+  //blackWall.addEventListener("animationend", () => {
     loader.classList.add("loader-hidden");
     document.body.removeChild(document.body.firstChild);
     loader.remove();
-  });
+  //});
   // spinner ends
 });
 
