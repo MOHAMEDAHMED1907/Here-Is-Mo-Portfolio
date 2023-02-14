@@ -236,7 +236,6 @@ if (formMesg) {
 }
 
 // title typing
-if (document.query.selector('.typing)){
 const options = {
   strings: ["Mohamed Ahmed", "front end developer", "ui desginer"],
   typeSpeed: 80,
@@ -244,6 +243,6 @@ const options = {
   smartBackspace: false,
   loop: true,
 };
-
+if (document.query.selector('.typing') ) {
 let typed = new Typed(".typing", options);
-}
+    }
