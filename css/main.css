@@ -1131,7 +1131,8 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: -12rem;
+  /* margin-top: -12rem; */
+  visibility:hidden;
 }
 .slider-buttons i {
   cursor: pointer;
@@ -1140,8 +1141,9 @@ svg {
   padding: 1rem;
   border-radius: 50%;
   position: relative;
-  bottom: -10rem;
+ //* bottom: -10rem; */
   border: 2px solid var(--base-color);
+  visibility:visible;
 }
 
 .project-holder-1 .slider-header::before {
