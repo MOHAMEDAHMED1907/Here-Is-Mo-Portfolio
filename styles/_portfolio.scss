@@ -189,7 +189,8 @@
   position: absolute;
   z-index: 110;
   @include any-flex(space-around);
-  margin-top: -12rem;
+  visibility:hidden;
+ // margin-top: -12rem;
   i {
     cursor: pointer;
     font-size: 40px;
@@ -197,8 +198,9 @@
     padding: 1rem;
     border-radius: 50%;
     position: relative;
-    bottom: -10rem;
+   // bottom: -10rem;
     border: 2px solid var(--base-color);
+    visibility: visible;
   }
 }
 
