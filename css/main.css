@@ -795,6 +795,11 @@ medium screen  ✅
   letter-spacing: 1px;
 }
 
+.education .cards .card .current {
+        background-color: var(--base-color);
+
+}
+
 .skill {
   width: 160px;
   height: 160px;
