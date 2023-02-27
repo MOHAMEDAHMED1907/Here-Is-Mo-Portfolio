@@ -796,7 +796,7 @@ medium screen  ✅
 }
 
 .education .cards .card .current {
-        background-color: var(--base-color);
+        background-color: var(--base-color)!important;
 
 }
 
