@@ -890,6 +890,11 @@ svg {
     stroke-dashoffset: 0;
   }
 }
+@keyframes progress-GIT {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 @keyframes progress-JAVASCRIPT {
   100% {
     stroke-dashoffset: 110;
