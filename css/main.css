@@ -756,6 +756,10 @@ medium screen  ✅
   stroke: yellow;
 }
 
+.myskills .skills-container .skill-git circle {
+  stroke: red;
+}
+
 .education .cards {
   display: flex;
   width: 100%;
