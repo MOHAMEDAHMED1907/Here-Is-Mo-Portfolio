@@ -118,7 +118,6 @@ const skillsAnimation = () => {
     const skill_name = skill.lastElementChild;
     const skill_circle = skill_name.previousElementSibling.lastElementChild;
     // add animation for each skill  progress
-    /*// temp */   console.log(`progress-${skill_name.innerHTML} `);
     skill_circle.style.animationName = `progress-${skill_name.innerHTML} `;
   });
 };
